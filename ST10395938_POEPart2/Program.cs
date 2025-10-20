@@ -1,3 +1,6 @@
+using Microsoft.EntityFrameworkCore;
+using ST10395938_POEPart2.Data;
+
 namespace ST10395938_POEPart2
 {
     public class Program
@@ -8,6 +11,10 @@ namespace ST10395938_POEPart2
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+
+            // Configured SQlite to Database
+            builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlite(
+                builder.Configuration.GetConnectionString("DefaultConnection")));
 
             var app = builder.Build();
 
