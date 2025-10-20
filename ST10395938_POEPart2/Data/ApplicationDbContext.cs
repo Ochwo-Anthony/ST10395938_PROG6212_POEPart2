@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using ST10395938_POEPart2.Models;
 
 namespace ST10395938_POEPart2.Data
 {
@@ -9,6 +10,6 @@ namespace ST10395938_POEPart2.Data
         
         }
         // Table for the User Model
-        public DbSet<Lecturer> MentorLogs {  get; set; }
+        public DbSet<LecturerClaim> LecturerClaims { get; set; }
     }
 }
