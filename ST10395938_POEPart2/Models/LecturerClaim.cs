@@ -30,5 +30,10 @@ namespace ST10395938_POEPart2.Models
         public DateTime? PaidUTc {  get; set; }
 
         public DateTime CreateAt { get; set; } = DateTime.UtcNow;
+
+        public decimal CalculateTotalAmount()
+        {
+            return HoursWorked * Rate; 
+        }
     }
 }
