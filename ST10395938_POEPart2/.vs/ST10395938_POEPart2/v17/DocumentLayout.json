@@ -11,8 +11,12 @@
       "RelativeMoniker": "D:0:0:{54FA27B9-51BB-4DCD-A48E-186191CC66DB}|ST10395938_POEPart2.csproj|solutionrelative:models\\lecturerclaim.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{54FA27B9-51BB-4DCD-A48E-186191CC66DB}|ST10395938_POEPart2.csproj|c:\\users\\lab_services_student\\documents\\github\\st10395938_prog6212_poepart2\\st10395938_poepart2\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{54FA27B9-51BB-4DCD-A48E-186191CC66DB}|ST10395938_POEPart2.csproj|solutionrelative:data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{54FA27B9-51BB-4DCD-A48E-186191CC66DB}|ST10395938_POEPart2.csproj|c:\\users\\lab_services_student\\documents\\github\\st10395938_prog6212_poepart2\\st10395938_poepart2\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{54FA27B9-51BB-4DCD-A48E-186191CC66DB}|ST10395938_POEPart2.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{54FA27B9-51BB-4DCD-A48E-186191CC66DB}|ST10395938_POEPart2.csproj|c:\\users\\lab_services_student\\documents\\github\\st10395938_prog6212_poepart2\\st10395938_poepart2\\controllers\\managercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{54FA27B9-51BB-4DCD-A48E-186191CC66DB}|ST10395938_POEPart2.csproj|solutionrelative:controllers\\managercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,20 +26,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ApplicationDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\lab_services_student\\Documents\\GitHub\\ST10395938_PROG6212_POEPart2\\ST10395938_POEPart2\\Data\\ApplicationDbContext.cs",
-              "RelativeDocumentMoniker": "Data\\ApplicationDbContext.cs",
-              "ToolTip": "C:\\Users\\lab_services_student\\Documents\\GitHub\\ST10395938_PROG6212_POEPart2\\ST10395938_POEPart2\\Data\\ApplicationDbContext.cs",
-              "RelativeToolTip": "Data\\ApplicationDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-20T22:40:38.065Z"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -44,9 +36,9 @@
               "RelativeDocumentMoniker": "Controllers\\ClaimsController.cs",
               "ToolTip": "C:\\Users\\lab_services_student\\Documents\\GitHub\\ST10395938_PROG6212_POEPart2\\ST10395938_POEPart2\\Controllers\\ClaimsController.cs",
               "RelativeToolTip": "Controllers\\ClaimsController.cs",
-              "ViewState": "AgIAALAAAAAAAAAAAAAAALsAAAAfAAAAAAAAAA==",
+              "ViewState": "AgIAALAAAAAAAAAAAAAgwLkAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-20T22:12:43.126Z",
+              "WhenOpened": "2025-10-21T11:17:01.815Z",
               "EditorCaption": ""
             },
             {
@@ -57,9 +49,36 @@
               "RelativeDocumentMoniker": "Models\\LecturerClaim.cs",
               "ToolTip": "C:\\Users\\lab_services_student\\Documents\\GitHub\\ST10395938_PROG6212_POEPart2\\ST10395938_POEPart2\\Models\\LecturerClaim.cs",
               "RelativeToolTip": "Models\\LecturerClaim.cs",
-              "ViewState": "AgIAABUAAABAAAAAAIAewAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABIAAAAAAAAAAAAmwCIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-20T22:37:06.562Z"
+              "WhenOpened": "2025-10-21T11:16:15Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\lab_services_student\\Documents\\GitHub\\ST10395938_PROG6212_POEPart2\\ST10395938_POEPart2\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\lab_services_student\\Documents\\GitHub\\ST10395938_PROG6212_POEPart2\\ST10395938_POEPart2\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAMAAADAmZmZmZkOwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-21T11:15:48.974Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ManagerController.cs",
+              "DocumentMoniker": "C:\\Users\\lab_services_student\\Documents\\GitHub\\ST10395938_PROG6212_POEPart2\\ST10395938_POEPart2\\Controllers\\ManagerController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ManagerController.cs",
+              "ToolTip": "C:\\Users\\lab_services_student\\Documents\\GitHub\\ST10395938_PROG6212_POEPart2\\ST10395938_POEPart2\\Controllers\\ManagerController.cs",
+              "RelativeToolTip": "Controllers\\ManagerController.cs",
+              "ViewState": "AgIAADAAAABAZmZmZqYpwDkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-21T07:43:42.615Z",
+              "EditorCaption": ""
             }
           ]
         }
