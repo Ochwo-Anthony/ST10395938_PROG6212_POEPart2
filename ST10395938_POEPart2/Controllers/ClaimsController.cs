@@ -72,8 +72,7 @@ namespace ST10395938_POEPart2.Controllers
 
 
             model.Status = "Pending";
-            model.PaymentStatus = "Unpaid";
-            model.Note = null;
+            model.PaymentStatus = "Unpaid";            
 
             _db.LecturerClaims.Add(model);
             
@@ -113,11 +112,11 @@ namespace ST10395938_POEPart2.Controllers
         [HttpGet]
         public async Task<IActionResult> Edit(int id)
         {
-            var row = await _db.LecturerClaims.FindAsync();
+            var row = await _db.LecturerClaims.FindAsync(id);
 
             if(row == null) return NotFound();
             
-            if(row.Status != "NeedsFix")
+            if(row.Status != "Needs Fix")
             {
                 TempData["Message"] = "Only logs with status 'Needs Fix' can be edited.";
                 return RedirectToAction(nameof(MyClaims), new { lecturerName = row.LecturerName });
@@ -131,8 +130,7 @@ namespace ST10395938_POEPart2.Controllers
         public async Task<IActionResult> Edit(int id, LecturerClaim input, IFormFile? evidence)
         {
             var row = await _db.LecturerClaims.FindAsync(id);
-
-            if(row == null) return NotFound();
+            if (row == null) return NotFound();
 
             if (row.Status != "Needs Fix")
             {

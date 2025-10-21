@@ -65,6 +65,7 @@ wwwroot\lib\jquery\dist\jquery.slim.js
 wwwroot\lib\jquery\dist\jquery.slim.min.js
 wwwroot\lib\jquery\dist\jquery.slim.min.map
 wwwroot\lib\jquery\LICENSE.txt
+wwwroot\uploads\a58b2fe302d14be78cec79c3f1ac6486.pdf
 C:\Users\lab_services_student\Documents\GitHub\ST10395938_PROG6212_POEPart2\ST10395938_POEPart2\wwwroot\css\site.css
 C:\Users\lab_services_student\Documents\GitHub\ST10395938_PROG6212_POEPart2\ST10395938_POEPart2\wwwroot\favicon.ico
 C:\Users\lab_services_student\Documents\GitHub\ST10395938_PROG6212_POEPart2\ST10395938_POEPart2\wwwroot\js\site.js
