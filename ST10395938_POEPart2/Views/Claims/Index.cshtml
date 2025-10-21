@@ -1,0 +1,96 @@
+﻿@model IEnumerable<ST10395938_POEPart2.Models.LecturerClaim>
+
+@{
+    ViewData["Title"] = "Dashboard";
+
+    var submittedCount = Model?.Count() ?? 0;
+    var approvedCount = Model?.Count(c => c.Status == "Manager Approved" || c.Status == "Coordinator Approved") ?? 0;
+    var rejectedCount = Model?.Count(c => c.Status == "Needs Fix" || c.Status == "Rejected") ?? 0;
+}
+
+<div class="container-fluid mt-4">
+    <div class="row">
+        <!-- Left Sidebar -->
+        <div class="col-md-3 col-lg-2 bg-light p-3 rounded shadow-sm">
+            <div class="text-center mb-4">
+                <img src="~/images/placeholder.jpg" alt="Profile" class="img-fluid rounded-circle mb-2" style="width:100px;">
+                <h5 class="mt-2">Lecturer Name</h5>
+            </div>
+            <div class="d-grid gap-2">
+                <a asp-action="Create" class="btn btn-primary btn-lg">Submit Claim</a>
+                <a asp-action="MyClaims" class="btn btn-secondary btn-lg">View My Claims</a>
+            </div>
+        </div>
+
+        <!-- Right Main Content -->
+        <div class="col-md-9 col-lg-10">
+            <h2 class="mb-4">Claims Summary</h2>
+
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card text-white bg-primary shadow-sm">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Submitted</h5>
+                            <p class="card-text display-6">@submittedCount</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card text-white bg-success shadow-sm">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Approved</h5>
+                            <p class="card-text display-6">@approvedCount</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card text-white bg-danger shadow-sm">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Rejected</h5>
+                            <p class="card-text display-6">@rejectedCount</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Claims Table -->
+            <div class="mt-5">
+                <h4>Recent Claims</h4>
+                <table class="table table-bordered table-striped">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>ID</th>
+                            <th>Status</th>
+                            <th>Hours</th>
+                            <th>Rate</th>
+                            <th>Total</th>
+                            <th>Submitted On</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (Model != null && Model.Any())
+                        {
+                            @foreach (var claim in Model.OrderByDescending(c => c.CreateAt).Take(5))
+                            {
+                                <tr>
+                                    <td>@claim.Id</td>
+                                    <td>@claim.Status</td>
+                                    <td>@claim.HoursWorked</td>
+                                    <td>@($"R {claim.Rate:N2}")</td>
+                                    <td>@($"R {(claim.HoursWorked * claim.Rate):N2}")</td>
+                                    <td>@claim.CreateAt.ToLocalTime().ToString("yyyy-MM-dd")</td>
+                                </tr>
+                            }
+                        }
+                        else
+                        {
+                            <tr>
+                                <td colspan="6" class="text-center">No claims available</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

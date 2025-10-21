@@ -2,7 +2,103 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<style>
+    /* Card lift effect */
+    .role-card {
+        transition: transform 0.3s, background-color 0.3s;
+        background-color: rgba(255, 255, 255, 0.9); /* Default slightly transparent white */
+    }
+
+    /* Lecturer Card Hover */
+    .lecturer-card:hover {
+        transform: translateY(-5px);
+        background-color: rgba(0, 123, 255, 0.1); /* Blue transparent */
+    }
+
+    /* Coordinator Card Hover */
+    .coordinator-card:hover {
+        transform: translateY(-5px);
+        background-color: rgba(40, 167, 69, 0.1); /* Green transparent */
+    }
+
+    /* Manager Card Hover */
+    .manager-card:hover {
+        transform: translateY(-5px);
+        background-color: rgba(220, 53, 69, 0.1); /* Red transparent */
+    }
+
+    /* Buttons */
+    .role-btn {
+        background-color: white;
+        color: #333;
+        border: 2px solid #333;
+        transition: all 0.3s;
+    }
+
+    .lecturer-btn:hover {
+        background-color: #007bff;
+        color: white;
+        border-color: #007bff;
+    }
+
+    .coordinator-btn:hover {
+        background-color: #28a745;
+        color: white;
+        border-color: #28a745;
+    }
+
+    .manager-btn:hover {
+        background-color: #dc3545;
+        color: white;
+        border-color: #dc3545;
+    }
+
+    /* Role icons */
+    .role-icon {
+        font-size: 60px;
+        margin-bottom: 20px;
+        color: #555;
+    }
+</style>
+
+<div class="container mt-5">
+    <h1 class="text-center mb-5">Welcome</h1>
+
+    <div class="row justify-content-center g-4">
+        <!-- Lecturer Card -->
+        <div class="col-md-4">
+            <div class="card role-card lecturer-card shadow-sm h-100 text-center p-3">
+                <div class="role-icon">
+                    <img src="~/images/lecturer.jpg" alt="Lecturer" style="width:260px;height:160px;">
+                </div>
+                <h5 class="card-title">Lecturer</h5>
+                <p class="card-text">Submit and view your claims, check status and payment details.</p>
+                <a asp-controller="Claims" asp-action="MyClaims" class="btn role-btn lecturer-btn">Go to Lecturer Portal</a>
+            </div>
+        </div>
+
+        <!-- Coordinator Card -->
+        <div class="col-md-4">
+            <div class="card role-card coordinator-card shadow-sm h-100 text-center p-3">
+                <div class="role-icon">
+                    <img src="~/images/coordinator.jpg" alt="Coordinator" style="width:260px;height:160px">
+                </div>
+                <h5 class="card-title">Coordinator</h5>
+                <p class="card-text">Review pending claims submitted by lecturers and approve or reject.</p>
+                <a asp-controller="Coordinator" asp-action="Index" class="btn role-btn coordinator-btn">Go to Coordinator Portal</a>
+            </div>
+        </div>
+
+        <!-- Manager Card -->
+        <div class="col-md-4">
+            <div class="card role-card manager-card shadow-sm h-100 text-center p-3">
+                <div class="role-icon">
+                    <img src="~/images/manager.jpg" alt="Manager" style="width:260px;height:160px">
+                </div>
+                <h5 class="card-title">Manager</h5>
+                <p class="card-text">Approve claims that have been approved by coordinators and manage payments.</p>
+                <a asp-controller="Manager" asp-action="Index" class="btn role-btn manager-btn">Go to Manager Portal</a>
+            </div>
+        </div>
+    </div>
 </div>

@@ -1,0 +1,87 @@
+﻿@model IEnumerable<ST10395938_POEPart2.Models.LecturerClaim>
+@{
+    ViewData["Title"] = "My Claims";
+}
+
+<div class="container mt-4">
+    <h2 class="mb-4 text-center">My Submitted Claims</h2>
+
+    <form method="get" asp-action="MyClaims" class="row mb-4">
+        <div class="col-md-4">
+            <input type="text" name="lecturerName" value="@ViewBag.LecturerName" class="form-control" placeholder="Search by Lecturer Name" />
+        </div>
+        <div class="col-md-3">
+            <select name="status" class="form-select">
+                @foreach (var s in ViewBag.Statuses as string[])
+                {
+                    <option value="@s" selected="@(ViewBag.Status == s)">
+                        @s
+                    </option>
+                }
+            </select>
+        </div>
+        <div class="col-md-2">
+            <button type="submit" class="btn btn-primary w-100">Filter</button>
+        </div>
+        <div class="col-md-3 text-end">
+            <a asp-action="Create" class="btn btn-success">+ New Claim</a>
+        </div>
+    </form>
+
+    @if (TempData["Message"] != null)
+    {
+        <div class="alert alert-info text-center">@TempData["Message"]</div>
+    }
+
+    <table class="table table-bordered table-striped">
+        <thead class="table-dark">
+            <tr>
+                <th>ID</th>
+                <th>Lecturer</th>
+                <th>Hours</th>
+                <th>Rate</th>
+                <th>Total</th>
+                <th>Status</th>
+                <th>Payment</th>
+                <th>Evidence</th>
+                <th>Created</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var claim in Model)
+            {
+                <tr>
+                    <td>@claim.Id</td>
+                    <td>@claim.LecturerName</td>
+                    <td>@claim.HoursWorked</td>
+                    <td>@($"R {claim.Rate:N2}")</td>
+                    <td>@($"R {claim.HoursWorked * claim.Rate:N2}")</td>
+                    <td>@claim.Status</td>
+                    <td>@claim.PaymentStatus</td>
+                    <td>
+                        @if (!string.IsNullOrEmpty(claim.EvidenceFile))
+                        {
+                            <a href="~/uploads/@claim.EvidenceFile" target="_blank">View File</a>
+                        }
+                        else
+                        {
+                            <span class="text-muted">No File</span>
+                        }
+                    </td>
+                    <td>@claim.CreateAt.ToLocalTime().ToString("yyyy-MM-dd HH:mm")</td>
+                    <td>
+                        @if (claim.Status == "Needs Fix")
+                        {
+                            <a asp-action="Edit" asp-route-id="@claim.Id" class="btn btn-sm btn-warning">Edit</a>
+                        }
+                        else
+                        {
+                            <span class="text-muted">Locked</span>
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

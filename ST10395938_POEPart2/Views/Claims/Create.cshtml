@@ -1,0 +1,51 @@
+﻿@model ST10395938_POEPart2.Models.LecturerClaim
+@{
+    ViewData["Title"] = "Create Lecturer Claim";
+}
+
+<div class="container mt-4">
+    <h2 class="mb-4 text-center">Submit New Claim</h2>
+
+    <form asp-action="Create" enctype="multipart/form-data" method="post">
+        <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+        <div class="mb-3">
+            <label asp-for="LecturerName" class="form-label"></label>
+            <input asp-for="LecturerName" class="form-control" />
+            <span asp-validation-for="LecturerName" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="HoursWorked" class="form-label"></label>
+            <input asp-for="HoursWorked" class="form-control" type="number" step="0.01" />
+            <span asp-validation-for="HoursWorked" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Rate" class="form-label"></label>
+            <input asp-for="Rate" class="form-control" type="number" step="0.01" />
+            <span asp-validation-for="Rate" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Note" class="form-label"></label>
+            <textarea asp-for="Note" class="form-control" rows="3"></textarea>
+            <span asp-validation-for="Note" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label for="evidence" class="form-label">Upload Evidence (PDF/DOCX)</label>
+            <input type="file" name="evidence" class="form-control" />
+            <span asp-validation-for="EvidenceFile" class="text-danger"></span>
+        </div>
+
+        <div class="text-center">
+            <button type="submit" class="btn btn-success">Submit Claim</button>
+            <a asp-action="Index" class="btn btn-outline-secondary">Cancel</a>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
