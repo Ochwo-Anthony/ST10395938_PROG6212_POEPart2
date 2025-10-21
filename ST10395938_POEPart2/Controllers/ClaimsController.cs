@@ -19,10 +19,12 @@ namespace ST10395938_POEPart2.Controllers
             _env = env;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            var claims = await _db.LecturerClaims.AsNoTracking().ToListAsync();
+            return View(claims);
         }
+
 
         [HttpGet]
         public IActionResult Create()
