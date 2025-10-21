@@ -22,6 +22,11 @@ namespace ST10395938_POEPart2.Models
         public string Status { get; set; } = "Pending";
 
         public string? ReviewNote { get; set; }
+
+        public string? ReviewedBy { get; set; }
+
+        public DateTime? ReviewedAt { get; set; }
+
         [Required]
         public string PaymentStatus { get; set; } = "Unpaid";
 

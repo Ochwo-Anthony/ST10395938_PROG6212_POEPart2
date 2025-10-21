@@ -48,9 +48,12 @@ namespace ST10395938_POEPart2.Controllers
         {
             var row = await _db.LecturerClaims.FindAsync(id);
             if (row == null) return NotFound();
+
             row.Status = "Needs Fix";
 
             row.ReviewNote = string.IsNullOrWhiteSpace(reason) ? "Please fix and resubmit" : reason.Trim();
+            row.ReviewedBy = "Coordinator";
+            row.ReviewedAt = DateTime.UtcNow;
 
             await _db.SaveChangesAsync();
             return RedirectToAction(nameof(Index));

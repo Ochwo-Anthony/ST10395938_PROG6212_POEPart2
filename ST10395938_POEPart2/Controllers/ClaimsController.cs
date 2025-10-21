@@ -182,7 +182,8 @@ namespace ST10395938_POEPart2.Controllers
             row.Status = "Pending";
 
             row.ReviewNote = null;
-
+            row.ReviewedBy = null;
+            row.ReviewedAt = null;
             row.PaymentStatus = "Unpaid";
             row.PaymentReference = null;
             row.PaidUTc = null;

@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ST10395938_POEPart2.Data;
 
@@ -10,9 +11,11 @@ using ST10395938_POEPart2.Data;
 namespace ST10395938_POEPart2.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20251021220011_NameForThisChange")]
+    partial class NameForThisChange
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "9.0.10");
@@ -60,6 +63,7 @@ namespace ST10395938_POEPart2.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("ReviewedBy")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Status")

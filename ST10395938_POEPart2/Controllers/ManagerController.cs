@@ -58,6 +58,8 @@ namespace ST10395938_POEPart2.Controllers
 
             row.Status = "Needs Fix";
             row.ReviewNote = string.IsNullOrWhiteSpace(reason) ? "Changes Requested" : reason.Trim();
+            row.ReviewedBy = "Manager";
+            row.ReviewedAt = DateTime.UtcNow;
             row.PaymentStatus = "Unpaid";
             row.PaymentReference = null;
             row.PaidUTc = null;

@@ -22,23 +22,8 @@ namespace ST10395938_POEPart2.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
-        {
-            return View();
-        }
 
-        [HttpPost]
-        public IActionResult ClearClaims()
-        {
-#if DEBUG
-            _db.LecturerClaims.RemoveRange(_db.LecturerClaims);
-            _db.SaveChanges();
-            TempData["Message"] = "All LecturerClaims rows have been deleted.";
-#else
-            TempData["Message"] = "Clearing claims is only allowed in development mode.";
-#endif
-            return RedirectToAction(nameof(Privacy));
-        }
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
